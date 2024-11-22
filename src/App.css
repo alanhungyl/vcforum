@@ -2,21 +2,8 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 8vmin;
-  pointer-events: none;
-  padding: 2vmin;
-}
-
-.App-header {
+.background-color {
   background-color: #262D34;
-  min-height: 6vh;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(4vh);
-  color: white;
 }
 
 .App-link {
@@ -25,6 +12,29 @@
 
 .custom-purple {
   color: #7E2384;
+}
+
+.custom-background-gray {
+  color: #262D34;
+}
+
+.main-dark {
+  background-color: #1E252B;
+  min-height: 100vh;
+  color: white;
+}
+
+.background-dark {
+  background-color: #1E252B;
+}
+
+.text-gray {
+  color: #ACACAC;
+}
+
+.searchbar {
+  background-color: #2C353D;
+  color: #858EAD;
 }
 
 body {
