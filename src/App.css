@@ -2,8 +2,12 @@
   text-align: center;
 }
 
-.background-color {
+.block-background-color {
   background-color: #262D34;
+}
+
+.bar-background-color {
+  background-color: #2C353D;
 }
 
 .App-link {
@@ -12,10 +16,6 @@
 
 .custom-purple {
   color: #7E2384;
-}
-
-.custom-background-gray {
-  color: #262D34;
 }
 
 .main-dark {
