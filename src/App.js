@@ -10,7 +10,7 @@ import './App.css';
 function App() {
   return (
     <div className="min-h-screen background-dark text-gray-100">
-      <header className="block-background-color text-white p-4 flex justify-between items-center w-full">
+      <header className="bg-gray-800 text-white p-4 flex justify-between items-center w-full fixed top-0 left-0 z-50">
         <div className="flex items-center">
           <img src={cuhklogo} className="h-16 p-1 ml-8 mr-8" alt="logo" />
           <p className="custom-purple font-bold text-4xl mr-auto">CUHK Forum</p>
@@ -32,9 +32,9 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <div className="p-4 flex justify-between gap-20 mx-auto ">
+      <div className="p-4 flex justify-between gap-20 mx-auto my-24 ">
         {/* Left Sidebar */}
-        <div className="w-1/6 text-xl mt-12 ml-24">
+        <div className="w-1/6 text-xl mt-12 ml-24 fixed top-24 left-0 h-full">
           <div className="block-background-color rounded-2xl p-8 mb-20">
             <div className="flex items-center space-x-2 mb-6">
               <img src={UserIcon} alt="User Icon" className="w-12 h-12" />
@@ -92,9 +92,9 @@ function App() {
         </div>
 
         {/* Main Content Area */}
-        <div className="text-xl w-4/6">
+        <div className="text-xl w-1/2 mx-auto my-12">
           {/* Posts */}
-          <div className="block-background-color rounded-2xl p-8 my-12 h-64 relative">
+          <div className="block-background-color rounded-2xl p-8 h-64 relative">
             <p className="font-bold mb-4">Dummy Title 1</p>
             <p className="text-gray mb-4">Dummy Content</p>
             <p className="text-gray-400 absolute bottom-8 right-8">Posted by Test</p>
@@ -131,7 +131,7 @@ function App() {
         </div>
 
         {/* Right Sidebar */}
-        <div className="w-1/6 mr-24">
+        <div className="w-1/6 mr-24 fixed top-24 right-0 h-full overflow-y-auto">
           <div className="block-background-color rounded-2xl p-4 mt-12 text-xl">
             <div className="space-y-6">
               <div>
