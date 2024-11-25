@@ -1,13 +1,22 @@
-import cuhklogo from './icons/cuhklogo.png';
-import { ReactComponent as ConnectButton } from './icons/Connect Button.svg';
-import { ReactComponent as Home } from './icons/Home.svg';
-import { ReactComponent as Message } from './icons/Message.svg';
+import React, { useState } from 'react';
 import { ReactComponent as Notification } from './icons/Notification.svg';
 import { ReactComponent as Search } from './icons/Search.svg';
+import { ReactComponent as Home } from './icons/Home.svg';
+import { ReactComponent as Message } from './icons/Message.svg';
+import { ReactComponent as ConnectButton } from './icons/ConnectButton.svg';
 import UserIcon from './icons/UserIcon.png';
+import cuhklogo from './icons/cuhklogo.png';
+import LoginModal from './LoginModal/LoginModal.js';
+import LoginModalContent from './LoginModal/LoginModalContent.js';
 import './App.css';
 
 function App() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <div className="min-h-screen background-dark text-gray-100">
       <header className="block-background-color text-white p-4 flex justify-between items-center w-full">
@@ -27,7 +36,9 @@ function App() {
           <Home className="h-14 w-14" alt="Home" />
           <Message className="h-14 w-14" alt="Message" />
           <Notification className="h-14 w-14" alt="Notification" />
-          <ConnectButton className="h-14 w-36" alt="ConnectButton" />
+          <button onClick={toggleModal} className="h-14 w-36 flex items-center justify-center bg-transparent border-none">
+            <ConnectButton className="h-full w-full" alt="ConnectButton" />
+          </button>
         </div>
       </header>
 
@@ -153,6 +164,11 @@ function App() {
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      <LoginModal isOpen={isModalOpen} onClose={toggleModal}>
+        <LoginModalContent />
+      </LoginModal>
     </div>
   );
 }
