@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/vcforum/static/css/main.057a703d.css",
-    "main.js": "/vcforum/static/js/main.977a4442.js",
+    "main.css": "/vcforum/static/css/main.ad76fb77.css",
+    "main.js": "/vcforum/static/js/main.efe34b64.js",
     "static/js/453.34be3eca.chunk.js": "/vcforum/static/js/453.34be3eca.chunk.js",
     "static/media/cuhklogo.png": "/vcforum/static/media/cuhklogo.d9ac88f2be38358c0269.png",
-    "static/media/Connect Button.svg": "/vcforum/static/media/Connect Button.d6ab08c6707850d5c39ad1c694466daa.svg",
-    "static/media/Message.svg": "/vcforum/static/media/Message.0eb96a937272eb0fbcc22255207d9e71.svg",
-    "static/media/Home.svg": "/vcforum/static/media/Home.04e2e865a4eb8d165f3f1dfd92fb3424.svg",
-    "static/media/Notification.svg": "/vcforum/static/media/Notification.0c9e68f37e7566921d17ba9d9932407b.svg",
+    "static/media/ConnectButton.svg": "/vcforum/static/media/ConnectButton.057b9c3a44c524cd1136958fff00b5ec.svg",
+    "static/media/Message.svg": "/vcforum/static/media/Message.816c0a9b1c9078fe3da069e9e7094058.svg",
+    "static/media/Home.svg": "/vcforum/static/media/Home.25b01fd03e58218fad3e605ea4fe0bc4.svg",
+    "static/media/Notification.svg": "/vcforum/static/media/Notification.e4a7c22236b1119a1080926684755c8b.svg",
     "index.html": "/vcforum/index.html",
-    "static/media/Search.svg": "/vcforum/static/media/Search.2dafb119f0c53edd914eb6635e98b9a2.svg",
-    "main.057a703d.css.map": "/vcforum/static/css/main.057a703d.css.map",
-    "main.977a4442.js.map": "/vcforum/static/js/main.977a4442.js.map",
+    "static/media/Search.svg": "/vcforum/static/media/Search.3005d922a829d0eddda0bbf2c2ad3b3b.svg",
+    "main.ad76fb77.css.map": "/vcforum/static/css/main.ad76fb77.css.map",
+    "main.efe34b64.js.map": "/vcforum/static/js/main.efe34b64.js.map",
     "453.34be3eca.chunk.js.map": "/vcforum/static/js/453.34be3eca.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.057a703d.css",
-    "static/js/main.977a4442.js"
+    "static/css/main.ad76fb77.css",
+    "static/js/main.efe34b64.js"
   ]
 }
