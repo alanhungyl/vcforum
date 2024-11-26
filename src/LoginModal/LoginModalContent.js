@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 const LoginModalContent = () => {
-  const handleSubmit = (e) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission logic here
+    try {
+      const response = await axios.post('http://localhost:3000/login', { username, password });
+      alert(response.data);
+    } catch (error) {
+      alert('Login failed');
+    }
   };
 
   return (
     <div className="block-background-color p-8 rounded-xl">
       <h2 className="text-2xl mb-4">Login</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="max-w-md mx-auto">
         <div className="mb-4">
           <label className="block text-white text-sm font-bold mb-2" htmlFor="username">
             Username
@@ -19,6 +28,8 @@ const LoginModalContent = () => {
             id="username"
             type="text"
             placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
         </div>
         <div className="mb-6">
@@ -30,6 +41,8 @@ const LoginModalContent = () => {
             id="password"
             type="password"
             placeholder="******************"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <div className="flex items-center justify-between space-x-4">
