@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vcforum/static/css/main.ad76fb77.css",
-    "main.js": "/vcforum/static/js/main.efe34b64.js",
+    "main.js": "/vcforum/static/js/main.e69c12f9.js",
     "static/js/453.34be3eca.chunk.js": "/vcforum/static/js/453.34be3eca.chunk.js",
     "static/media/cuhklogo.png": "/vcforum/static/media/cuhklogo.d9ac88f2be38358c0269.png",
     "static/media/ConnectButton.svg": "/vcforum/static/media/ConnectButton.057b9c3a44c524cd1136958fff00b5ec.svg",
@@ -11,11 +11,11 @@
     "index.html": "/vcforum/index.html",
     "static/media/Search.svg": "/vcforum/static/media/Search.3005d922a829d0eddda0bbf2c2ad3b3b.svg",
     "main.ad76fb77.css.map": "/vcforum/static/css/main.ad76fb77.css.map",
-    "main.efe34b64.js.map": "/vcforum/static/js/main.efe34b64.js.map",
+    "main.e69c12f9.js.map": "/vcforum/static/js/main.e69c12f9.js.map",
     "453.34be3eca.chunk.js.map": "/vcforum/static/js/453.34be3eca.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ad76fb77.css",
-    "static/js/main.efe34b64.js"
+    "static/js/main.e69c12f9.js"
   ]
 }
