@@ -21,10 +21,11 @@ const getVCLoginCode = async () => {
   try {
     const response = await axios(config);
     const vpTokenQrCode = response.data.verificationHistory?.vpTokenQrCode; // Safely access vpTokenQrCode
-    console.log(vpTokenQrCode); // Log only the vpTokenQrCode
-    return vpTokenQrCode; // Return it
+    const presentationExchangeId = response.data.verificationHistory?.presentationExchangeId; // Safely access presentationExchangeId
+    console.log({ vpTokenQrCode, presentationExchangeId }); // Log both values
+    return { vpTokenQrCode, presentationExchangeId }; // Return both values as an object
   } catch (error) {
-    console.error('Error fetching vpTokenQrCode:', error);
+    console.error('Error fetching data:', error);
     throw error; // Re-throw the error for further handling
   }
 };
