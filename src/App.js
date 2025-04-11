@@ -13,6 +13,8 @@ import './App.css';
 import PostModal from './PostModal/PostModal.js';
 import CommentModal from './CommentModal/CommentModal.js';
 import axios from 'axios';
+import getVCLoginCode from './vc/Verify_VC/GenVerifyRequest.js';
+
 
 function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -30,8 +32,14 @@ function App() {
     };
   });
 
-  const toggleLoginModal = () => {
-    setIsLoginModalOpen(!isLoginModalOpen);
+  const toggleLoginModal = async () => {
+    try {
+      const token = await getVCLoginCode(); // Assuming this function fetches the token
+      alert(`Token: ${token}`); // Display the token in an alert
+    } catch (error) {
+      console.error('Failed to fetch token:', error);
+      alert('Failed to fetch token. Please try again.');
+    }
   };
 
   const toggleNewPostModal = () => {
@@ -222,7 +230,7 @@ function App() {
       <LoginModal isOpen={isLoginModalOpen} onClose={toggleLoginModal}>
         <LoginModalContent onLoginSuccess={handleLoginSuccess} />
       </LoginModal>
-
+      
       {/* New Post Modal */}
       {isNewPostModalOpen && (
         <PostModal 

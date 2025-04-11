@@ -1,0 +1,72 @@
+{
+  "credentialDefinition": {
+    "id": "67f96a57d9790cc8767ed67e",
+    "credentialDefinitionId": "1af0c77e-0dda-49f8-a7af-5cdfed403846",
+    "createdAt": 1744398935,
+    "updatedAt": 1744398935,
+    "openIdOrganisationId": "cc8f6303-c49f-468c-ad3c-ce93a865f963",
+    "label": "CUHK VC Definition",
+    "expirationInDays": 30,
+    "display": {
+      "name": "",
+      "locale": "en-GB",
+      "logo": {
+        "uri": "https://demo-api.igrant.io/v2/onboard/image/67dc50f54a7ed6a52451bbc4/web",
+        "altText": ""
+      },
+      "description": "",
+      "backgroundColor": "",
+      "backgroundImage": {
+        "uri": "https://demo-api.igrant.io/v2/onboard/image/6662f1d49d63ffc7c68129b3/web"
+      },
+      "textColor": ""
+    },
+    "credentialDefinitionUri": "",
+    "credentialFormat": "dc+sd-jwt",
+    "vct": "CuhkE-studentCard",
+    "claims": {
+      "properties": {
+        "admissionYear": {
+          "limitDisclosure": true,
+          "type": "string"
+        },
+        "college": {
+          "limitDisclosure": true,
+          "type": "string"
+        },
+        "fullName": {
+          "limitDisclosure": true,
+          "type": "string"
+        },
+        "gender": {
+          "limitDisclosure": true,
+          "type": "string"
+        },
+        "major": {
+          "limitDisclosure": true,
+          "type": "string"
+        },
+        "studentID": {
+          "limitDisclosure": true,
+          "type": "string"
+        }
+      },
+      "required": [
+        "fullName",
+        "gender",
+        "studentID",
+        "major",
+        "college",
+        "admissionYear"
+      ],
+      "type": "object"
+    },
+    "supportRevocation": false,
+    "enforceWUA": false,
+    "validationPath": "$",
+    "version": "draft_13",
+    "trustAnchor": "did:key",
+    "kid": "",
+    "revocationMethod": "status_list"
+  }
+}

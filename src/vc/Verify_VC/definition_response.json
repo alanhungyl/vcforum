@@ -1,0 +1,64 @@
+{
+    "presentationDefinition": {
+      "id": "67f96867d9790cc8767ed678",
+      "presentationDefinitionId": "9f6095c2-591f-489e-84f2-1c1769dd4af3",
+      "label": "CUHK Credentials Verification",
+      "presentationDefinition": {
+        "id": "9f6095c2-591f-489e-84f2-1c1769dd4af3",
+        "input_descriptors": [
+          {
+            "constraints": {
+              "fields": [
+                {
+                  "filter": {
+                    "contains": {
+                      "const": "VerifiableCredentialOfTheChineseUniversityOfHongKong"
+                    },
+                    "type": "array"
+                  },
+                  "path": [
+                    "$.type"
+                  ]
+                },
+                {
+                  "path": [
+                    "$.credentialSubject.gender"
+                  ]
+                },
+                {
+                  "path": [
+                    "$.credentialSubject.major"
+                  ]
+                },
+                {
+                  "path": [
+                    "$.credentialSubject.college"
+                  ]
+                }
+              ]
+            },
+            "format": {
+              "jwt_vc_json": {
+                "alg": [
+                  "ES256"
+                ]
+              }
+            },
+            "id": "71cec094-d5df-4df0-b2a3-1f7ce938373e",
+            "name": "",
+            "purpose": ""
+          }
+        ]
+      },
+      "transactionDataDefinitionType": "",
+      "enforceWUA": false,
+      "version": "draft_18",
+      "trustAnchor": "did:key",
+      "kid": "",
+      "scope": "",
+      "responseType": "vp_token",
+      "createdAt": 1744398439,
+      "updatedAt": 1744398439,
+      "openIdOrganisationId": "cc8f6303-c49f-468c-ad3c-ce93a865f963"
+    }
+  }
