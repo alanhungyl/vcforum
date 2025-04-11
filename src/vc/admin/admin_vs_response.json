@@ -1,0 +1,57 @@
+{
+    "credentialDefinition": {
+      "id": "67f98f75d9790cc8767edb92",
+      "credentialDefinitionId": "53fc4d7e-8800-49c7-9554-feed3dcc66e6",
+      "createdAt": 1744408437,
+      "updatedAt": 1744408437,
+      "openIdOrganisationId": "cc8f6303-c49f-468c-ad3c-ce93a865f963",
+      "label": "forum admin",
+      "expirationInDays": 30,
+      "display": {
+        "name": "",
+        "locale": "en-GB",
+        "logo": {
+          "uri": "https://demo-api.igrant.io/v2/onboard/image/67dc50f54a7ed6a52451bbc4/web",
+          "altText": ""
+        },
+        "description": "",
+        "backgroundColor": "",
+        "backgroundImage": {
+          "uri": "https://demo-api.igrant.io/v2/onboard/image/6662f1d49d63ffc7c68129b3/web"
+        },
+        "textColor": ""
+      },
+      "credentialDefinitionUri": "",
+      "credentialFormat": "dc+sd-jwt",
+      "vct": "CuhkForumAdministrator",
+      "claims": {
+        "properties": {
+          "forumPrvillege": {
+            "limitDisclosure": true,
+            "type": "string"
+          },
+          "fullName": {
+            "limitDisclosure": true,
+            "type": "string"
+          },
+          "studentID": {
+            "limitDisclosure": true,
+            "type": "string"
+          }
+        },
+        "required": [
+          "studentID",
+          "fullName",
+          "forumPrvillege"
+        ],
+        "type": "object"
+      },
+      "supportRevocation": false,
+      "enforceWUA": false,
+      "validationPath": "$",
+      "version": "draft_13",
+      "trustAnchor": "did:key",
+      "kid": "",
+      "revocationMethod": "status_list"
+    }
+  }

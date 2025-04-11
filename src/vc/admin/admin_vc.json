@@ -1,0 +1,27 @@
+{
+    "label": "forum admin",
+    "vct": "CUHK Forum Administrator",
+    "claims": {
+      "type": "object",
+      "properties": {
+        "studentID": {
+          "type": "string",
+          "limitDisclosure": true
+        },
+        "fullName": {
+          "type": "string",
+          "limitDisclosure": true
+        },
+        "forumPrvillege": {
+          "type": "string",
+          "limitDisclosure": true
+        }
+      },
+      "required": [
+        "studentID",
+        "fullName",
+        "forumPrvillege"
+      ]
+    },
+    "credentialFormat": "dc+sd-jwt"
+  }
