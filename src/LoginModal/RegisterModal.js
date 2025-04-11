@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const RegisterModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -34,8 +35,27 @@ const RegisterModal = ({ isOpen, onClose }) => {
     });
   };
 
-  const handleConfirm = () => {
-    onClose();
+  const handleConfirm = async (e) => {
+    e.preventDefault(); // Prevent default form submission
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    try {
+      const response = await axios.post('http://localhost:3000/register', {
+        username: formData.username,
+        password: formData.password,
+        major: formData.major,
+        college: formData.college,
+        yearOfAdmission: formData.yearOfAdmission,
+      });
+      console.log('Registration successful:', response.data);
+      onClose(); // Close the modal after successful registration
+    } catch (error) {
+      console.error('Registration error:', error);
+      alert(error.response?.data || 'Registration failed');
+    }
   };
 
   return (

@@ -13,10 +13,16 @@ const writeUsers = (users) => {
   fs.writeFileSync(usersFilePath, JSON.stringify(users, null, 2));
 };
 
-const addUser = async (username, password) => {
+const addUser = async (username, password, userData) => {
   const users = readUsers();
   const hashedPassword = await bcrypt.hash(password, 10);
-  users.push({ username, password: hashedPassword });
+  users.push({ 
+    username, 
+    password: hashedPassword,
+    major: userData.major,
+    college: userData.college,
+    yearOfAdmission: userData.yearOfAdmission
+  });
   writeUsers(users);
 };
 
@@ -37,4 +43,4 @@ const checkPassword = async (username, password) => {
   return true;
 };
 
-module.exports = { addUser, checkPassword };
+module.exports = { addUser, checkPassword, findUser };

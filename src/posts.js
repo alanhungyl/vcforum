@@ -9,7 +9,7 @@ const posts = [
     ]
   },
   {
-    title: "I love CUHK!",
+    title: "I love CUHK",
     content: "Founded in 1963, The Chinese University of Hong Kong (CUHK) is a forward-looking comprehensive research university with a global vision and a mission to combine tradition with modernity, and to bring together China and the West. CUHK teachers and students hail from all around the world. CUHK graduates are connected worldwide through an extensive alumni network.",
     author: "CUHK Lover",
     comments: [

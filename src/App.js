@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ReactComponent as Notification } from './icons/Notification.svg';
 import { ReactComponent as Search } from './icons/Search.svg';
 import { ReactComponent as Home } from './icons/Home.svg';
@@ -12,12 +12,23 @@ import posts from './posts.js';
 import './App.css';
 import PostModal from './PostModal/PostModal.js';
 import CommentModal from './CommentModal/CommentModal.js';
+import axios from 'axios';
 
 function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isNewPostModalOpen, setIsNewPostModalOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
   const [isCommentModalOpen, setIsCommentModalOpen] = useState(false);
+  const [posts, setPosts] = useState([]);
+  const [userData, setUserData] = useState(() => {
+    const saved = localStorage.getItem('userData');
+    return saved ? JSON.parse(saved) : {
+      nickname: '----',
+      major: '----',
+      college: '----',
+      yearOfAdmission: '----'
+    };
+  });
 
   const toggleLoginModal = () => {
     setIsLoginModalOpen(!isLoginModalOpen);
@@ -28,10 +39,11 @@ function App() {
   };
 
   const handlePostClick = (post) => {
+    console.log('Post clicked:', post); // Debug log to check the post being clicked
     setSelectedPost(post);
   };
 
-  const closePostModal = () => {
+  const handleClosePost = () => {
     setSelectedPost(null);
   };
 
@@ -41,6 +53,30 @@ function App() {
 
   const closeCommentModal = () => {
     setIsCommentModalOpen(false);
+  };
+
+  const fetchPosts = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/api/posts');
+      setPosts(response.data);
+    } catch (error) {
+      console.error('Failed to fetch posts:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
+
+  const handlePostCreated = (newPost) => {
+    console.log('New post created:', newPost); // Debug log
+    setPosts([newPost, ...posts]);
+    setIsNewPostModalOpen(false);
+  };
+
+  const handleLoginSuccess = (newUserData) => {
+    setUserData(newUserData);
+    setIsLoginModalOpen(false);
   };
 
   return (
@@ -88,21 +124,21 @@ function App() {
               <img src={UserIcon} alt="User Icon" className="w-12 h-12" />
               <div>
                 <p className="font-bold">Nickname</p>
-                <p className="text-gray">----</p>
+                <p className="text-gray">{userData.nickname}</p>
               </div>
             </div>
             <div className="space-y-6">
               <div>
                 <p className="font-bold">Major</p>
-                <p className="text-gray">----</p>
+                <p className="text-gray">{userData.major}</p>
               </div>
               <div>
                 <p className="font-bold">College</p>
-                <p className="text-gray">----</p>
+                <p className="text-gray">{userData.college}</p>
               </div>
               <div>
                 <p className="font-bold">Year of Admission</p>
-                <p className="text-gray">----</p>
+                <p className="text-gray">{userData.yearOfAdmission}</p>
               </div>
             </div>
           </div>
@@ -141,13 +177,21 @@ function App() {
 
         {/* Main Content Area */}
         <div className="text-xl w-4/6">
-          {posts.map((post, index) => (
-            <div key={index} className="block-background-color rounded-2xl p-8 my-12 h-64 relative cursor-pointer" onClick={() => handlePostClick(post)}>
-              <p className="font-bold mb-4">{post.title}</p>
-              <p className="text-gray mb-4">{post.content}</p>
-              <p className="text-gray-400 absolute bottom-8 right-8">Posted by {post.author}</p>
+        {posts.map((post) => (
+          <div key={post.id} className="block-background-color rounded-2xl p-8 my-12 relative cursor-pointer">
+            <p className="font-bold mb-4">{post.title}</p>
+            <p className="text-gray mb-4">{post.content}</p>
+            <div>
+              <h3 className="font-bold">Comments:</h3>
+              {post.comments.map((comment) => (
+                <div key={comment.id} className="comment">
+                  <p>{comment.text}</p>
+                  <p className="text-gray-400">- {comment.author}</p>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+        ))}
         </div>
 
         {/* Right Sidebar */}
@@ -176,36 +220,24 @@ function App() {
 
       {/* Login Modal */}
       <LoginModal isOpen={isLoginModalOpen} onClose={toggleLoginModal}>
-        <LoginModalContent />
+        <LoginModalContent onLoginSuccess={handleLoginSuccess} />
       </LoginModal>
 
       {/* New Post Modal */}
       {isNewPostModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="modal modal-open">
-            <div className="modal-box w-11/12 max-w-5xl">
-              <h2 className="font-bold text-2xl mb-4">New Post</h2>
-              <div className="mb-4">
-                <label className="block text-sm font-medium mb-2">Title</label>
-                <input type="text" className="input input-bordered w-full" />
-              </div>
-              <div className="mb-4">
-                <label className="block text-sm font-medium mb-2">Content</label>
-                <textarea className="textarea textarea-bordered w-full h-40"></textarea>
-              </div>
-              <div className="flex justify-end space-x-4">
-                <button className="btn" onClick={toggleNewPostModal}>Cancel</button>
-                <button className="btn btn-outline">Discard</button>
-                <button className="btn btn-success">Post</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <PostModal 
+          onClose={() => setIsNewPostModalOpen(false)}
+          onPostCreated={handlePostCreated}
+        />
       )}
 
-      {/* Post Modal */}
+      {/* Post Modal with Comments */}
       {selectedPost && (
-        <PostModal post={selectedPost} onClose={closePostModal} onComment={openCommentModal} />
+        <PostModal 
+          post={selectedPost} // Pass the selected post here
+          onClose={handleClosePost}
+          onPostCreated={handlePostCreated} // If you want to handle new posts
+        />
       )}
 
       {/* Comment Modal */}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const LoginModalContent = () => {
+const LoginModalContent = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showRegisterModal, setShowRegisterModal] = useState(false);
@@ -16,9 +16,22 @@ const LoginModalContent = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:3000/login', { username, password });
-      alert(response.data);
+      
+      // Store user data in localStorage
+      const userData = {
+        nickname: username,
+        major: response.data.major || '----',
+        college: response.data.college || '----',
+        yearOfAdmission: response.data.yearOfAdmission || '----'
+      };
+      localStorage.setItem('userData', JSON.stringify(userData));
+      
+      // Call the callback function
+      onLoginSuccess(userData);
+      
+      alert('Login successful');
     } catch (error) {
-      alert('Incorrect Password or Username');
+      alert(error.response?.data || 'Login failed');
     }
   };
 
@@ -35,8 +48,30 @@ const LoginModalContent = () => {
     setYearOfAdmission('');
   };
 
-  const handleConfirm = () => {
-    setShowRegisterModal(false);
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    if (registerPassword !== confirmPassword) {
+      alert("Passwords don't match!");
+      return;
+    }
+
+    try {
+      const response = await axios.post('http://localhost:3000/register', {
+        username: registerUsername,
+        password: registerPassword,
+        major,
+        college,
+        yearOfAdmission
+      });
+      alert('Registration successful');
+      setShowRegisterModal(false);
+    } catch (error) {
+      alert(error.response?.data || 'Registration failed');
+    }
+  };
+
+  const handleConfirm = (e) => {
+    handleRegister(e);
   };
 
   return (
