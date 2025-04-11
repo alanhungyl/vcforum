@@ -4,12 +4,12 @@ let data = JSON.stringify({
   "credentialDefinitionId": "1af0c77e-0dda-49f8-a7af-5cdfed403846",
   "credential": {
     "claims": {
-      "fullName": "Chan Tai Man 陳大文",
+      "fullName": "Chan Siu Ming 陳小明",
       "gender": "Male",
-      "studentID": "1155999999",
-      "major": "BEng Information Engineering",
-      "college": "New Asia College",
-      "admissionYear": "2021"
+      "studentID": "1155123123",
+      "major": "BSc Computer Science",
+      "college": "United College",
+      "admissionYear": "2022"
     }
   }
 });

@@ -3,43 +3,50 @@ import getVCLoginCode from '../vc/Verify_VC/GenVerifyRequest';
 import { QRCodeCanvas } from 'qrcode.react';
 import { getVerifiableCredential } from '../vc/Read_VC/getVC';
 
-const LoginModalContent = ({ onLoginSuccess }) => { // Accept onLoginSuccess as a prop
+const LoginModalContent = ({ onLoginSuccess }) => {
   const [token, setToken] = useState('Loading...');
   const [presentationExchangeId, setPresentationExchangeId] = useState(null);
+  const [isPolling, setIsPolling] = useState(false); // To track polling state
 
   useEffect(() => {
-    const fetchToken = async () => {
+    const fetchTokenAndStartPolling = async () => {
       try {
         const { vpTokenQrCode, presentationExchangeId } = await getVCLoginCode();
         setToken(vpTokenQrCode || 'No token available');
         setPresentationExchangeId(presentationExchangeId || 'No ID available');
+
+        if (presentationExchangeId) {
+          startPolling(presentationExchangeId); // Start polling after fetching the token
+        }
       } catch (error) {
         setToken('Error fetching token');
         setPresentationExchangeId('Error fetching ID');
       }
     };
 
-    fetchToken();
+    fetchTokenAndStartPolling();
   }, []);
 
-  const handleSubmit = async () => {
-    try {
-      if (!presentationExchangeId) {
-        alert('Presentation Exchange ID is missing.');
-        return;
+  const startPolling = (presentationExchangeId) => {
+    setIsPolling(true); // Start polling
+    const intervalId = setInterval(async () => {
+      try {
+        console.log('Polling getVerifiableCredential with ID:', presentationExchangeId); // Debug log
+
+        const { college, major, admissionYear } = await getVerifiableCredential(presentationExchangeId);
+
+        if (college && major && admissionYear) {
+
+          // Pass the fetched data to the parent component
+          onLoginSuccess({ college, major, admissionYear });
+
+          clearInterval(intervalId); // Stop polling
+          setIsPolling(false);
+        }
+      } catch (error) {
+        console.error('Error in pollForCredential:', error.message); // Log errors but continue polling
       }
-
-      console.log('Calling getVerifiableCredential with ID:', presentationExchangeId); // Debug log
-
-      const { college, major, admissionYear } = await getVerifiableCredential(presentationExchangeId);
-      alert(`College: ${college}\nMajor: ${major}\nAdmission Year: ${admissionYear}`);
-
-      // Pass the fetched data to the parent component
-      onLoginSuccess({ college, major, admissionYear });
-    } catch (error) {
-      alert('Failed to fetch verifiable credential. Please try again.');
-      console.error('Error in handleSubmit:', error.message); // Improved error logging
-    }
+    }, 5000); // Poll every 5 seconds
   };
 
   return (
@@ -57,19 +64,13 @@ const LoginModalContent = ({ onLoginSuccess }) => { // Accept onLoginSuccess as 
             style={{
               padding: '16px',
               backgroundColor: 'white',
-              borderRadius: '16px', // Rounded corners for the container
-              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)', // Optional shadow for a smoother look
+              borderRadius: '16px',
+              boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
             }}
           >
             <QRCodeCanvas value={token} size={256} />
           </div>
           <p className="text-white mt-4 text-sm">Presentation Exchange ID: {presentationExchangeId}</p>
-          <button
-            className="btn btn-ghost custom-purple-bg text-white text-xl mt-8 py-2"
-            onClick={handleSubmit} // Updated onClick handler
-          >
-            Submit
-          </button>
         </>
       ) : (
         <p className="text-white">{token}</p>

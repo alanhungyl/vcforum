@@ -113,7 +113,27 @@ function App() {
           <button className="btn h-14 w-14 flex items-center justify-center rounded-lg bg-gray-400">
             <Notification className="h-10 w-10" alt="Notification" />
           </button>
-          <button className="btn h-14 w-24 custom-purple-bg text-white text-xl" onClick={toggleLoginModal}>Connect</button>
+          <button
+            className="btn h-14 w-24 custom-purple-bg text-white text-xl"
+            onClick={() => {
+              if (userData.major !== '----' && userData.college !== '----' && userData.yearOfAdmission !== '----') {
+                // Logout logic
+                setUserData({
+                  major: '----',
+                  college: '----',
+                  yearOfAdmission: '----',
+                });
+                localStorage.removeItem('userData'); // Clear user data from localStorage
+              } else {
+                // Open login modal
+                toggleLoginModal();
+              }
+            }}
+          >
+            {userData.major !== '----' && userData.college !== '----' && userData.yearOfAdmission !== '----'
+              ? 'Logout'
+              : 'Connect'}
+          </button>
         </div>
       </header>
 
@@ -124,10 +144,6 @@ function App() {
           <div className="block-background-color rounded-2xl p-8 mb-20">
             <div className="flex items-center space-x-2 mb-6">
               <img src={UserIcon} alt="User Icon" className="w-12 h-12" />
-              <div>
-                <p className="font-bold">Nickname</p>
-                <p className="text-gray">{userData.nickname}</p>
-              </div>
             </div>
             <div className="space-y-6">
               <div>
