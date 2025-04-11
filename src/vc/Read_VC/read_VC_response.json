@@ -1,0 +1,90 @@
+{
+    "verificationHistory": {
+      "id": "67f9823dd9790cc8767ed88a",
+      "presentationExchangeId": "b19786d4-5795-4ec4-ada8-b5ede539b2b4",
+      "vpTokenRequestState": "d087e0df-460e-49cc-9c83-70d28dad58d5",
+      "vpTokenRequest": "eyJhbGciOiJFUzI1NiIsImtpZCI6ImRpZDprZXk6ejJkbXpEODFjZ1B4OFZraTdKYnV1TW1GWXJXUGdZb3l0eWtVWjNleXFodDFqOUticjNuUlNFRXZmbThnZDk4N1lxWTJDREhTeGlIcjdibmFyVEZpNVFpdDNObXdCOW5XZkZHRmo4QkViMk5kV1E3UUoyV1d6MWVIRjU3TFNlcjQzU0s2RFZXWmdnWjltVU1kcVVmbmk3b0pVZmRjU3BQNUVOdmZESlZrWWRwdnFYWThZNCN6MmRtekQ4MWNnUHg4VmtpN0pidXVNbUZZcldQZ1lveXR5a1VaM2V5cWh0MWo5S2JyM25SU0VFdmZtOGdkOTg3WXFZMkNESFN4aUhyN2JuYXJURmk1UWl0M05td0I5bldmRkdGajhCRWIyTmRXUTdRSjJXV3oxZUhGNTdMU2VyNDNTSzZEVldaZ2daOW1VTWRxVWZuaTdvSlVmZGNTcFA1RU52ZkRKVmtZZHB2cVhZOFk0IiwidHlwIjoiSldUIn0.eyJzdGF0ZSI6ICJkMDg3ZTBkZi00NjBlLTQ5Y2MtOWM4My03MGQyOGRhZDU4ZDUiLCAiY2xpZW50X2lkIjogImh0dHBzOi8vb2lkNHZjLmlncmFudC5pby9vcmdhbmlzYXRpb24vY2M4ZjYzMDMtYzQ5Zi00NjhjLWFkM2MtY2U5M2E4NjVmOTYzL3NlcnZpY2UvZHJhZnQtMTgiLCAiY2xpZW50X2lkX3NjaGVtZSI6ICJyZWRpcmVjdF91cmkiLCAicmVzcG9uc2VfdHlwZSI6ICJ2cF90b2tlbiIsICJyZXNwb25zZV9tb2RlIjogImRpcmVjdF9wb3N0IiwgInNjb3BlIjogIm9wZW5pZCIsICJub25jZSI6ICIyNmI2Yjc2ZS03MTJhLTQyZTItYWIwZS1jOTVkZTEyMGI4MDgiLCAiaXNzIjogImRpZDprZXk6ejJkbXpEODFjZ1B4OFZraTdKYnV1TW1GWXJXUGdZb3l0eWtVWjNleXFodDFqOUticjNuUlNFRXZmbThnZDk4N1lxWTJDREhTeGlIcjdibmFyVEZpNVFpdDNObXdCOW5XZkZHRmo4QkViMk5kV1E3UUoyV1d6MWVIRjU3TFNlcjQzU0s2RFZXWmdnWjltVU1kcVVmbmk3b0pVZmRjU3BQNUVOdmZESlZrWWRwdnFYWThZNCIsICJhdWQiOiAiaHR0cHM6Ly9vaWQ0dmMuaWdyYW50LmlvL29yZ2FuaXNhdGlvbi9jYzhmNjMwMy1jNDlmLTQ2OGMtYWQzYy1jZTkzYTg2NWY5NjMvc2VydmljZS9kcmFmdC0xOCIsICJleHAiOiAxNzQ0NDA4NjUzLCAiY2xpZW50X21ldGFkYXRhIjogeyJjbGllbnRfbmFtZSI6ICJEZXZlbG9wZXIgT3JnIiwgImxvZ29fdXJpIjogImh0dHBzOi8vZGVtby1hcGkuaWdyYW50LmlvL3YyL29uYm9hcmQvaW1hZ2UvNjdkYzUwZjU0YTdlZDZhNTI0NTFiYmM0L3dlYiIsICJsb2NhdGlvbiI6ICJTdG9ja2hvbG0iLCAiY292ZXJfdXJpIjogImh0dHBzOi8vZGVtby1hcGkuaWdyYW50LmlvL3YyL29uYm9hcmQvaW1hZ2UvNjY2MmYxZDQ5ZDYzZmZjN2M2ODEyOWIzL3dlYiIsICJkZXNjcmlwdGlvbiI6ICJEZXZlbG9wZXIgT3JnLCBTd2VkZW4gaXMgY29tbWl0dGVkIHRvIHNhZmVndWFyZGluZyB5b3VyIHByaXZhY3kuIFdlIHByb2Nlc3MgeW91ciBwZXJzb25hbCBkYXRhIGluIGxpbmUgd2l0aCBkYXRhIGFncmVlbWVudHMsIGVuc3VyaW5nIGFkaGVyZW5jZSB0byBJU08yNzU2MCBzdGFuZGFyZHMgYW5kIGxlZ2FsIGZyYW1ld29ya3MgbGlrZSBHRFBSLiBGb3IgZXZlcnkgcGVyc29uYWwgZGF0YSB3ZSBwcm9jZXNzLCB5b3UgY2FuIHZpZXcgaXRzIHVzYWdlIHB1cnBvc2UgYW5kIG1ha2UgaW5mb3JtZWQgY2hvaWNlcyB0byBvcHQgaW4gb3Igb3V0LiBGb3IgaW5xdWlyaWVzLCBjb250YWN0IG91ciBEYXRhIFByb3RlY3Rpb24gT2ZmaWNlciBhdCBkcG9AZGV2ZWxvcGVyLW9yZy1zd2VkZW4uY29tIn0sICJwcmVzZW50YXRpb25fZGVmaW5pdGlvbiI6IHsiaWQiOiAiMGZmMDI5YzctOTIxMi00NTU4LWEwNGYtMmQwNDgwNzFmOWVkIiwgImlucHV0X2Rlc2NyaXB0b3JzIjogW3siY29uc3RyYWludHMiOiB7ImZpZWxkcyI6IFt7ImZpbHRlciI6IHsiY29uc3QiOiAiQ3Voa0Utc3R1ZGVudENhcmQiLCAidHlwZSI6ICJzdHJpbmcifSwgInBhdGgiOiBbIiQudmN0Il19LCB7InBhdGgiOiBbIiQubWFqb3IiXX0sIHsicGF0aCI6IFsiJC5jb2xsZWdlIl19LCB7InBhdGgiOiBbIiQuYWRtaXNzaW9uWWVhciJdfV0sICJsaW1pdF9kaXNjbG9zdXJlIjogInJlcXVpcmVkIn0sICJmb3JtYXQiOiB7ImRjK3NkLWp3dCI6IHsiYWxnIjogWyJFUzI1NiJdfSwgInZwK3NkLWp3dCI6IHsiYWxnIjogWyJFUzI1NiJdfX0sICJpZCI6ICI5NGU0NGJmOS1mZWZiLTRkYWQtODkwOC00Mjk1MGQyNjgxNDMiLCAibmFtZSI6ICIiLCAicHVycG9zZSI6ICIifV19LCAicmVzcG9uc2VfdXJpIjogImh0dHBzOi8vb2lkNHZjLmlncmFudC5pby9vcmdhbmlzYXRpb24vY2M4ZjYzMDMtYzQ5Zi00NjhjLWFkM2MtY2U5M2E4NjVmOTYzL3NlcnZpY2UvZGlyZWN0X3Bvc3QifQ.sAJBMVyYxqAXKNg459hInJ4nKPYMz_XZ-Sd-ZUy2qX8nqlCVC4Za_TzRcr1jIundiXkQ9BihUIWpzn6q8SKTYA",
+      "vpTokenQrCode": "openid4vp://?request_uri=https%3A%2F%2Foid4vc.igrant.io%2Forganisation%2Fcc8f6303-c49f-468c-ad3c-ce93a865f963%2Fservice%2Fverification%2Fb19786d4-5795-4ec4-ada8-b5ede539b2b4",
+      "vpTokenResponse": "eyJhbGciOiJFUzI1NiIsImtpZCI6ImRpZDprZXk6ejJkbXpEODFjZ1B4OFZraTdKYnV1TW1GWXJXUGdZb3l0eWtVWjNleXFodDFqOUticjNuUlNFRXZmbThnZDk4N1lxWTJDREhTeGlIcjdibmFyVEZpNVFpdDNObXdCOW5XZkZHRmo4QkViMk5kV1E3UUoyV1d6MWVIRjU3TFNlcjQzU0s2RFZXWmdnWjltVU1kcVVmbmk3b0pVZmRjU3BQNUVOdmZESlZrWWRwdnFYWThZNCN6MmRtekQ4MWNnUHg4VmtpN0pidXVNbUZZcldQZ1lveXR5a1VaM2V5cWh0MWo5S2JyM25SU0VFdmZtOGdkOTg3WXFZMkNESFN4aUhyN2JuYXJURmk1UWl0M05td0I5bldmRkdGajhCRWIyTmRXUTdRSjJXV3oxZUhGNTdMU2VyNDNTSzZEVldaZ2daOW1VTWRxVWZuaTdvSlVmZGNTcFA1RU52ZkRKVmtZZHB2cVhZOFk0IiwidHlwIjoiZGMrc2Qtand0In0.eyJpYXQiOiAxNzQ0Mzk5MDc5LCAibmJmIjogMTc0NDM5OTA3OSwgImV4cCI6IDE3NDY5OTEwNzksICJzdWIiOiAiZGlkOmtleTp6MmRtekQ4MWNnUHg4VmtpN0pidXVNbUZZcldQZ1lveXR5a1VaM2V5cWh0MWo5S2JxV0p4YmFnclkyVUJQRlYzUkxxbmM4ckgxNk5qOEhjR2RwcE15dm5zRFg5eUJVZUNvRWVYa3RuMXZDemRXTWhpcVFOTHhBVFlld3JuclNURkxLb2pyWmZlOVpkU2VlR2txQWFUU2RhNGdFbk1vQ3V2R2FZYW1WcFViQkI3NVRDUnlOIiwgImlzcyI6ICJkaWQ6a2V5OnoyZG16RDgxY2dQeDhWa2k3SmJ1dU1tRllyV1BnWW95dHlrVVozZXlxaHQxajlLYnIzblJTRUV2Zm04Z2Q5ODdZcVkyQ0RIU3hpSHI3Ym5hclRGaTVRaXQzTm13QjluV2ZGR0ZqOEJFYjJOZFdRN1FKMldXejFlSEY1N0xTZXI0M1NLNkRWV1pnZ1o5bVVNZHFVZm5pN29KVWZkY1NwUDVFTnZmREpWa1lkcHZxWFk4WTQiLCAidmN0IjogIkN1aGtFLXN0dWRlbnRDYXJkIiwgIl9zZCI6IFsiMlVUYTczRGNTeXR3WjdxN0JhUG15R2VkM0E2dnNmQWRDejl5MkQteFBsYyIsICI3UGswUlBLc2xRbHRnNXZnYXpmdzNiOHNkZHM2aXp1MVNnX0wweUV1V01nIiwgIjY5dU0yWUFablJZU19vWjdFZ3RlaUxZejd1MDdxNnY0M2RtMTFoODlQOEUiLCAiWjdNd0ZpS0ZxMDVrZGJYR1R1enc4VFJDbFNOSldMYkRJWlpSS2dfVnJxTSIsICJsbUlFWk1hYjg5SXh5NnFaQ0plR3JwYjJESmRnT1RRWk1FajF5WEl4dExvIiwgIkNwaXVDbDBielJlVGZVbTVTaTVtNVBwLUltdXBHeE13QTJoOE5PalJMeTAiXSwgImp0aSI6ICJ1cm46ZGlkOmY4OTE4MzFiLTRhMWUtNDc5ZS05OGNjLTUzMmJlYmIzMGQ5NiIsICJjbmYiOiB7Imp3ayI6IHsiY3J2IjogIlAtMjU2IiwgImt0eSI6ICJFQyIsICJ4IjogIlhCalI2NjdQdlBHRGZUbU1heDdGSmt2OWVpS0VnS01zU2JRenllMVNYZUEiLCAieSI6ICJIRHU1VGlXSTZIR1pndlNnTE9qbnloYmU2Y3NrN2sxYW9VV1ZwWjlKUE1ZIn19fQ.acuriG3JFHjEilxB9rsNpRfvHUZrmmI7k3RIb7F4VfsbqtPJT_XNmefeeKs6P5q0S8eivXQcRa0T0tSUl4Yx6g~WyJlNzQwZTZlODFkYTM2ZjNiNjAzY2UyODYzNWFkYjE4YTg1ZDFmMDEyYjEwNmIxYTNkYTg2NWE0ZTc0NjQzMTNmIiwibWFqb3IiLCJCRW5nIEluZm9ybWF0aW9uIEVuZ2luZWVyaW5nIl0~WyJjZjkyZTA5NmY2MmVmMWVmZjcwMGI2ZTdkMTY1NDQxYzUyMWM2Yzc0MTQxMDE5NzYwNWQzM2NjNTBmOWVjNmVkIiwiY29sbGVnZSIsIk5ldyBBc2lhIENvbGxlZ2UiXQ~WyJiZTBhMzAxNDM2NzljOGI0M2ZiYTJlMzYzMDdkNTY3ODFkYmQ4NzhiZTkzMGI4NDMyNmU3Yjg3YTBlMDRiZjBjIiwiYWRtaXNzaW9uWWVhciIsIjIwMjEiXQ~eyJ0eXAiOiJrYitqd3QiLCJhbGciOiJFUzI1NiJ9.eyJub25jZSI6IjI2YjZiNzZlLTcxMmEtNDJlMi1hYjBlLWM5NWRlMTIwYjgwOCIsImlhdCI6MTc0NDQwNTMxMSwic2RfaGFzaCI6Im9iamRIZElFN2dXTnB1Sm1SRzZfSDc2S181dzc1VF8zV0dsaG1HSzlDX1kiLCJhdWQiOiJodHRwczovL29pZDR2Yy5pZ3JhbnQuaW8vb3JnYW5pc2F0aW9uL2NjOGY2MzAzLWM0OWYtNDY4Yy1hZDNjLWNlOTNhODY1Zjk2My9zZXJ2aWNlL2RyYWZ0LTE4In0.VkHZ1896tvf9LzwTtIgv7L13yoa-z67m8ZgfF8B3LKRqUVRv13tVAQu7mv5Z_sxCQjYU5x6iQcCL_W0OEtSRTA",
+      "presentationSubmission": {
+        "presentation_submission": {
+          "definition_id": "0ff029c7-9212-4558-a04f-2d048071f9ed",
+          "descriptor_map": [
+            {
+              "format": "dc+sd-jwt",
+              "id": "94e44bf9-fefb-4dad-8908-42950d268143",
+              "path": "$"
+            }
+          ],
+          "id": "A91EA0CE-05C5-411B-98F1-BED1BF960BFA"
+        }
+      },
+      "status": "presentation_acked",
+      "verified": true,
+      "createdAt": 1744405053,
+      "updatedAt": 1744405312,
+      "openIdOrganisationId": "cc8f6303-c49f-468c-ad3c-ce93a865f963",
+      "presentationDefinitionId": "0ff029c7-9212-4558-a04f-2d048071f9ed",
+      "holder": {
+        "name": "did:key:z2dmzD81cgPx8Vki7JbuuMmFYrWPgYoytykUZ3eyqht1j9KbqWJxbagrY2UBPFV3RLqnc8rH16Nj8HcGdppMyvnsDX9yBUeCoEeXktn1vCzdWMhiqQNLxATYewrnrSTFLKojrZfe9ZdSeeGkqAaTSda4gEnMoCuvGaYamVpUbBB75TCRyN"
+      },
+      "walletUnitAttestation": "",
+      "walletUnitAttestationPoP": "eyJhbGciOiJFUzI1NiJ9.eyJhdWQiOiJodHRwczovL29pZDR2Yy5pZ3JhbnQuaW8vb3JnYW5pc2F0aW9uL2NjOGY2MzAzLWM0OWYtNDY4Yy1hZDNjLWNlOTNhODY1Zjk2My9zZXJ2aWNlL2RyYWZ0LTE4IiwiZXhwIjoxNzQ0NDA4OTExLCJpc3MiOiJkaWQ6a2V5OnoyZG16RDgxY2dQeDhWa2k3SmJ1dU1tRllyV1BnWW95dHlrVVozZXlxaHQxajlLYnFXSnhiYWdyWTJVQlBGVjNSTHFuYzhySDE2Tmo4SGNHZHBwTXl2bnNEWDl5QlVlQ29FZVhrdG4xdkN6ZFdNaGlxUU5MeEFUWWV3cm5yU1RGTEtvanJaZmU5WmRTZWVHa3FBYVRTZGE0Z0VuTW9DdXZHYVlhbVZwVWJCQjc1VENSeU4iLCJqdGkiOiJ1cm46dXVpZDo2MDQ2Qzg0Mi03NjEyLTRGQzMtQTkxOC1GMTJFMDFBQTYzOEYiLCJuYmYiOjE3NDQ0MDUzMTF9.LTgakx-DSFNrSKaPCJ0mPoHr30SXfZ8H3EoLtJPIt8LEbi1vNNgDHSs0MhWatCUbFvTV5kQjdvD1B5HQ-ZBEcw",
+      "walletUnitAttestationVerified": false,
+      "presentation": {
+        "aud": "<v2_endpoint_is_deprecated>",
+        "exp": 0,
+        "iat": 0,
+        "iss": "<v2_endpoint_is_deprecated>",
+        "jti": "<v2_endpoint_is_deprecated>",
+        "nbf": 1737106805,
+        "nonce": "645df4e2-8016-4535-92d0-33778b4f99be",
+        "sub": "<v2_endpoint_is_deprecated>",
+        "vp": {
+          "@context": [
+            "https://www.w3.org/2018/credentials/v1"
+          ],
+          "holder": "<v2_endpoint_is_deprecated>",
+          "id": "<v2_endpoint_is_deprecated>",
+          "type": [
+            "VerifiablePresentation"
+          ],
+          "verifiableCredential": [
+            {
+              "admissionYear": "2021",
+              "cnf": {
+                "jwk": {
+                  "crv": "P-256",
+                  "kty": "EC",
+                  "x": "XBjR667PvPGDfTmMax7FJkv9eiKEgKMsSbQzye1SXeA",
+                  "y": "HDu5TiWI6HGZgvSgLOjnyhbe6csk7k1aoUWVpZ9JPMY"
+                }
+              },
+              "college": "New Asia College",
+              "exp": 1746991079,
+              "iat": 1744399079,
+              "iss": "did:key:z2dmzD81cgPx8Vki7JbuuMmFYrWPgYoytykUZ3eyqht1j9Kbr3nRSEEvfm8gd987YqY2CDHSxiHr7bnarTFi5Qit3NmwB9nWfFGFj8BEb2NdWQ7QJ2WWz1eHF57LSer43SK6DVWZggZ9mUMdqUfni7oJUfdcSpP5ENvfDJVkYdpvqXY8Y4",
+              "jti": "urn:did:f891831b-4a1e-479e-98cc-532bebb30d96",
+              "kb": {
+                "aud": "https://oid4vc.igrant.io/organisation/cc8f6303-c49f-468c-ad3c-ce93a865f963/service/draft-18",
+                "iat": 1744405311,
+                "nonce": "26b6b76e-712a-42e2-ab0e-c95de120b808",
+                "sd_hash": "objdHdIE7gWNpuJmRG6_H76K_5w75T_3WGlhmGK9C_Y"
+              },
+              "major": "BEng Information Engineering",
+              "nbf": 1744399079,
+              "sub": "did:key:z2dmzD81cgPx8Vki7JbuuMmFYrWPgYoytykUZ3eyqht1j9KbqWJxbagrY2UBPFV3RLqnc8rH16Nj8HcGdppMyvnsDX9yBUeCoEeXktn1vCzdWMhiqQNLxATYewrnrSTFLKojrZfe9ZdSeeGkqAaTSda4gEnMoCuvGaYamVpUbBB75TCRyN",
+              "vct": "CuhkE-studentCard"
+            }
+          ]
+        }
+      },
+      "credentialExchangeId": "",
+      "transactionData": null,
+      "transactionDataBase64": "",
+      "nonce": "26b6b76e-712a-42e2-ab0e-c95de120b808",
+      "responseType": "vp_token",
+      "idToken": "",
+      "idTokenDecoded": {}
+    }
+  }

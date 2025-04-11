@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import getVCLoginCode from '../vc/Verify_VC/GenVerifyRequest';
 import { QRCodeCanvas } from 'qrcode.react';
+import { getVerifiableCredential } from '../vc/Read_VC/getVC';
 
 const LoginModalContent = () => {
   const [token, setToken] = useState('Loading...');
@@ -20,6 +21,23 @@ const LoginModalContent = () => {
 
     fetchToken();
   }, []);
+
+  const handleSubmit = async () => {
+    try {
+      if (!presentationExchangeId) {
+        alert('Presentation Exchange ID is missing.');
+        return;
+      }
+  
+      console.log('Calling getVerifiableCredential with ID:', presentationExchangeId); // Debug log
+  
+      const { college, major, admissionYear } = await getVerifiableCredential(presentationExchangeId);
+      alert(`College: ${college}\nMajor: ${major}\nAdmission Year: ${admissionYear}`);
+    } catch (error) {
+      alert('Failed to fetch verifiable credential. Please try again.');
+      console.error('Error in handleSubmit:', error.message); // Improved error logging
+    }
+  };
 
   return (
     <div
@@ -43,6 +61,12 @@ const LoginModalContent = () => {
             <QRCodeCanvas value={token} size={256} />
           </div>
           <p className="text-white mt-4 text-sm">Presentation Exchange ID: {presentationExchangeId}</p>
+          <button
+            className="btn btn-ghost custom-purple-bg text-white text-xl mt-8 py-2"
+            onClick={handleSubmit} // Updated onClick handler
+          >
+            Submit
+          </button>
         </>
       ) : (
         <p className="text-white">{token}</p>
