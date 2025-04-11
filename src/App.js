@@ -32,14 +32,8 @@ function App() {
     };
   });
 
-  const toggleLoginModal = async () => {
-    try {
-      const token = await getVCLoginCode(); // Assuming this function fetches the token
-      alert(`Token: ${token}`); // Display the token in an alert
-    } catch (error) {
-      console.error('Failed to fetch token:', error);
-      alert('Failed to fetch token. Please try again.');
-    }
+  const toggleLoginModal = () => {
+    setIsLoginModalOpen(!isLoginModalOpen);
   };
 
   const toggleNewPostModal = () => {
@@ -119,7 +113,7 @@ function App() {
           <button className="btn h-14 w-14 flex items-center justify-center rounded-lg bg-gray-400">
             <Notification className="h-10 w-10" alt="Notification" />
           </button>
-          <button className="btn h-14 w-24 custom-purple-bg text-white text-xl" onClick={toggleLoginModal}>Login</button>
+          <button className="btn h-14 w-24 custom-purple-bg text-white text-xl" onClick={toggleLoginModal}>Connect</button>
         </div>
       </header>
 

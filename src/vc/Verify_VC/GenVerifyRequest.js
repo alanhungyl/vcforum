@@ -1,6 +1,6 @@
-const axios = require('axios');
+import axios from 'axios';
 
-async function getVCLoginCode() {
+const getVCLoginCode = async () => {
   let data = JSON.stringify({
     "presentationDefinitionId": "0ff029c7-9212-4558-a04f-2d048071f9ed",
     "requestByReference": true
@@ -20,13 +20,15 @@ async function getVCLoginCode() {
 
   try {
     const response = await axios(config);
-    const token = response.data.verificationHistory.vpTokenQrCode;
-    console.log("QR Code:", token);
-    return token;
+    const vpTokenQrCode = response.data.verificationHistory?.vpTokenQrCode; // Safely access vpTokenQrCode
+    console.log(vpTokenQrCode); // Log only the vpTokenQrCode
+    return vpTokenQrCode; // Return it
   } catch (error) {
-    console.error("Error fetching QR Code:", error);
-    throw error;
+    console.error('Error fetching vpTokenQrCode:', error);
+    throw error; // Re-throw the error for further handling
   }
-}
+};
 
-module.exports = getVCLoginCode;
+getVCLoginCode();
+
+export default getVCLoginCode;
