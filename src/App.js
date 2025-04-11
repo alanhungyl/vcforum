@@ -179,21 +179,21 @@ function App() {
 
         {/* Main Content Area */}
         <div className="text-xl w-4/6">
-        {posts.map((post) => (
-          <div key={post.id} className="block-background-color rounded-2xl p-8 my-12 relative cursor-pointer">
-            <p className="font-bold mb-4">{post.title}</p>
-            <p className="text-gray mb-4">{post.content}</p>
-            <div>
-              <h3 className="font-bold">Comments:</h3>
-              {post.comments.map((comment) => (
-                <div key={comment.id} className="comment">
-                  <p>{comment.text}</p>
-                  <p className="text-gray-400">- {comment.author}</p>
-                </div>
-              ))}
+          {posts.map((post) => (
+            <div key={post.id} className="block-background-color rounded-2xl p-8 my-12 relative cursor-pointer">
+              <p className="font-bold mb-4">{post.title}</p>
+              <p className="text-gray mb-4">{post.content}</p>
+              <div>
+                <h3 className="font-bold">Comments:</h3>
+                {post.comments.map((comment) => (
+                  <div key={comment.id} className="comment">
+                    <p>{comment.text}</p>
+                    <p className="text-gray-400">- {comment.author}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
         </div>
 
         {/* Right Sidebar */}
@@ -222,12 +222,22 @@ function App() {
 
       {/* Login Modal */}
       <LoginModal isOpen={isLoginModalOpen} onClose={toggleLoginModal}>
-        <LoginModalContent onLoginSuccess={handleLoginSuccess} />
+        <LoginModalContent
+          onLoginSuccess={(newUserData) => {
+            setUserData({
+              nickname: userData.nickname, // Keep nickname unchanged
+              major: newUserData.major,
+              college: newUserData.college,
+              yearOfAdmission: newUserData.admissionYear,
+            });
+            setIsLoginModalOpen(false); // Close the modal after login
+          }}
+        />
       </LoginModal>
-      
+
       {/* New Post Modal */}
       {isNewPostModalOpen && (
-        <PostModal 
+        <PostModal
           onClose={() => setIsNewPostModalOpen(false)}
           onPostCreated={handlePostCreated}
         />
@@ -235,7 +245,7 @@ function App() {
 
       {/* Post Modal with Comments */}
       {selectedPost && (
-        <PostModal 
+        <PostModal
           post={selectedPost} // Pass the selected post here
           onClose={handleClosePost}
           onPostCreated={handlePostCreated} // If you want to handle new posts

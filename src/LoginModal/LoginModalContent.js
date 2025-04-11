@@ -3,7 +3,7 @@ import getVCLoginCode from '../vc/Verify_VC/GenVerifyRequest';
 import { QRCodeCanvas } from 'qrcode.react';
 import { getVerifiableCredential } from '../vc/Read_VC/getVC';
 
-const LoginModalContent = () => {
+const LoginModalContent = ({ onLoginSuccess }) => { // Accept onLoginSuccess as a prop
   const [token, setToken] = useState('Loading...');
   const [presentationExchangeId, setPresentationExchangeId] = useState(null);
 
@@ -28,11 +28,14 @@ const LoginModalContent = () => {
         alert('Presentation Exchange ID is missing.');
         return;
       }
-  
+
       console.log('Calling getVerifiableCredential with ID:', presentationExchangeId); // Debug log
-  
+
       const { college, major, admissionYear } = await getVerifiableCredential(presentationExchangeId);
       alert(`College: ${college}\nMajor: ${major}\nAdmission Year: ${admissionYear}`);
+
+      // Pass the fetched data to the parent component
+      onLoginSuccess({ college, major, admissionYear });
     } catch (error) {
       alert('Failed to fetch verifiable credential. Please try again.');
       console.error('Error in handleSubmit:', error.message); // Improved error logging
