@@ -272,7 +272,6 @@ function App() {
         />
       )}
 
-
       {/* Post Content Modal */}
       {selectedPost && (
         <PostContentModal
