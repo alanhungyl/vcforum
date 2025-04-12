@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const { addUser, checkPassword, findUser } = require('./users/users.js');
 const { v4: uuidv4 } = require('uuid');
 
 const app = express();
@@ -17,6 +16,7 @@ app.use((req, res, next) => {
   console.log(`${req.method} ${req.url}`, req.body);
   next();
 });
+
 
 // Create post endpoint
 app.post('/api/posts', (req, res) => {
@@ -77,36 +77,6 @@ app.post('/api/posts/:postId/comments', (req, res) => {
     res.status(201).json(newComment);
   } catch (error) {
     res.status(500).json({ error: error.message });
-  }
-});
-
-app.post('/register', async (req, res) => {
-  const { username, password } = req.body;
-  try {
-    await addUser(username, password);
-    res.status(201).send('User registered');
-  } catch (error) {
-    res.status(400).send(error.message);
-  }
-});
-
-app.post('/login', async (req, res) => {
-  const { username, password } = req.body;
-  try {
-    await checkPassword(username, password);
-    
-    // Get user data from database/storage
-    const user = await findUser(username); 
-    
-    // Send back user data
-    res.json({
-      message: 'Login successful',
-      major: user.major,
-      college: user.college,
-      yearOfAdmission: user.yearOfAdmission
-    });
-  } catch (error) {
-    res.status(400).send(error.message);
   }
 });
 

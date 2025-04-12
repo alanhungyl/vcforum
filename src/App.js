@@ -8,13 +8,12 @@ import UserIcon from './icons/UserIcon.png';
 import cuhklogo from './icons/cuhklogo.png';
 import LoginModal from './LoginModal/LoginModal.js';
 import LoginModalContent from './LoginModal/LoginModalContent.js';
-import posts from './posts.js';
 import './App.css';
 import PostModal from './PostModal/PostModal.js';
 import CommentModal from './CommentModal/CommentModal.js';
 import axios from 'axios';
 import getVCLoginCode from './vc/Verify_VC/GenVerifyRequest.js';
-
+import PostContentModal from './PostModal/PostContentModal.js';
 
 function App() {
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -196,21 +195,16 @@ function App() {
         {/* Main Content Area */}
         <div className="text-xl w-4/6">
           {posts.map((post) => (
-            <div key={post.id} className="block-background-color rounded-2xl p-8 my-12 relative cursor-pointer">
+            <div
+              key={post.id}
+              className="block-background-color rounded-2xl p-8 my-12 relative cursor-pointer"
+              onClick={() => handlePostClick(post)} // Open modal on click
+            >
               <p className="font-bold mb-4">{post.title}</p>
-              <p className="text-gray mb-4">{post.content}</p>
-              <div>
-                <h3 className="font-bold">Comments:</h3>
-                {post.comments.map((comment) => (
-                  <div key={comment.id} className="comment">
-                    <p>{comment.text}</p>
-                    <p className="text-gray-400">- {comment.author}</p>
-                  </div>
-                ))}
-              </div>
             </div>
           ))}
         </div>
+
 
         {/* Right Sidebar */}
         <div className="w-1/6 mr-24">
@@ -228,7 +222,18 @@ function App() {
                 <p className="font-bold">Received Upvotes</p>
                 <p className="text-gray">0</p>
               </div>
-              <button className="w-full bar-background-color py-2 rounded-lg" onClick={toggleNewPostModal}>
+              <button className="w-full bar-background-color py-2 rounded-lg"
+                onClick={() => {
+                  if (
+                    userData.major !== '----' &&
+                    userData.college !== '----' &&
+                    userData.yearOfAdmission !== '----'
+                  ) {
+                    toggleNewPostModal();
+                  } else {
+                    alert('Please connect your account first.');
+                  }
+                }}>
                 New Post
               </button>
             </div>
@@ -259,12 +264,20 @@ function App() {
         />
       )}
 
-      {/* Post Modal with Comments */}
+      {/* Post Content Modal */}
       {selectedPost && (
-        <PostModal
-          post={selectedPost} // Pass the selected post here
-          onClose={handleClosePost}
-          onPostCreated={handlePostCreated} // If you want to handle new posts
+        <PostContentModal
+          post={selectedPost} // Pass the selected post to the modal
+          onClose={handleClosePost} // Close the modal
+        />
+      )}
+
+
+      {/* Post Content Modal */}
+      {selectedPost && (
+        <PostContentModal
+          post={selectedPost} // Pass the selected post to the modal
+          onClose={handleClosePost} // Close the modal
         />
       )}
 
